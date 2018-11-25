@@ -1,14 +1,180 @@
-body {
+/**
+* Global Styles
+*/
+* {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  background-color: rgba(255, 102, 153, 0.03); /* light pink */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+header,
+footer {
+	padding: 1em 0;
+	font-size: 0.8em;
+}
+
+header {
+	background-color: #fff;
+	border-bottom: 2px solid rgba(255, 102, 153, 0.9);
+}
+
+footer {
+	background: #ccc;
+	border-top: 1px solid #fff;
+	text-align: center;
+}
+
+aside {
+	width: 100%;
+	position: relative; /* for Google Maps */
+}
+
+section {
+	width: 100%;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Error handling */
+#error-fs,
+#error-gm {
+	display: none;
+	text-align: center;
+	margin: 30px;
+	font-size: 1.3em;
+	color: rgba(255, 102, 153, 0.9); /* pink */
+}
+
+/* Flexbox Styles */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #fffafb;
+}
+
+/* Header styles */
+.app-name {
+	font-family: 'Roboto', Arial, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.8em;
+	letter-spacing: 3px;
+	line-height: 1em;
+
+}
+
+.app-name a {
+	text-decoration: none;
+	color: rgba(255, 102, 153, 0.9); /* pink */
+}
+
+.header-image {
+	width: 100%;
+}
+
+/* Map Styles */
+.map-container {
+	background: #ccc;
+	border-bottom: 1px solid #fff;
+}
+
+#map {
+	height: 500px;
+}
+
+/* Filter Styles */
+.category-filter {
+	background: rgb(255, 250, 251);
+	
+	padding: 0 20px 20px;
+	text-align: center;
+	font-size: 1.1em;
+	line-height: 2em;
+	color: #fff;
+}
+
+.category-selection {
+	font-size: 1em;
+	border: 1px solid #666;
+	height: 35px;
+	min-width: 100%;
+}
+
+/* List Styles */
+.places-list {
+	padding: 1em;
+}
+
+.places-list-item {
+	margin-bottom: 0.5em;
+	background: #424242;
+	padding: 0.3em;
+	cursor: pointer;
+}
+
+.places-list-img {
+	background: #ccc;
+}
+
+.places-list-info {
+	margin-left: 1em;
+}
+
+/* List Item Styles */
+.place-name {
+	font-size: 1em;
+	padding: 0.2em 0;
+}
+
+.place-category {
+	font-size: 0.85em;
+}
+
+/* Info Window Styles */
+.info-window {
+	width: 100%;
+}
+
+.place-image {
+	padding: 15px;
+	width: 100%;
+}
+
+.place-text {
+	padding: 0 15px 15px;
+	font-size: 0.9em;
+}
+
+/**
+* Larger Screens
+*/
+
+@media screen and (min-width: 780px) {
+	aside {
+		width: 60%;
+		height: 678px;
+		border-right: 1px solid #fff;
+	}
+
+	section {
+		width: 40%;
+		border-left: 1px solid #fff;
+		border-right: 1px solid #fff;
+	}
+
+	#map {
+		height: 678px;
+	}
 }

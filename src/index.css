@@ -61,7 +61,9 @@ ul {
     flex-wrap: wrap;
     max-width: 1024px;
     margin: 0 auto;
-    background-color: #fffafb;
+	background-color: #fffafb;
+	padding-top: 10px;
+	
 }
 
 /* Header styles */

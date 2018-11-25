@@ -6,7 +6,7 @@ class Sidebar extends React.Component {
     super();
     this.state = {
       query: "",
-      //venues:[]
+      
     };
   }
 //filter venues

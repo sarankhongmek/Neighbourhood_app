@@ -8,7 +8,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     defaultZoom={8} zoom={props.zoom} center={props.center}
     defaultCenter={{ lat: 57.147684, lng: -2.093633 }}
   >
-    {props.markers  && props.markers.filter(marker => marker.isVisible).map((marker,index,arr) => {
+    {props.markers  !== undefined ? props.markers.filter(marker => marker.isVisible).map((marker,index,arr) => {
         const venueInfo = props.venues.find(venue => venue.id === marker.id)
         return (<Marker key={index} position={{ lat: marker.lat, lng: marker.lng }} onClick={ () => props.handelMarkerClick(marker)} animation={arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP} > 
 
@@ -19,7 +19,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                 </React.Fragment>
               </InfoWindow> )}
         </Marker>)
-    })}
+    }): ""}
   </GoogleMap>
 ))
 
@@ -34,15 +34,16 @@ class Map extends React.Component {
     return (
       <div className="map-container">
           	<div id="map" role="application" tabIndex="0"> 
-        <MyMapComponent
-        {...this.props}
-        isMarkerShown
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAnA0lhXmHx70_49JWfZ7MbKbV32Oua00Y"
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100%`,width: '100%' }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-        />
-        </div>
+              <div id="error-gm"><p>Google Maps failed to load : (</p></div>
+                <MyMapComponent
+                  {...this.props}
+                  isMarkerShown
+                  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAnA0lhXmHx70_49JWfZ7MbKbV32Oua00Y"
+                  loadingElement={<div style={{ height: `100%` }} />}
+                  containerElement={<div style={{ height: `100%`,width: '100%' }} />}
+                  mapElement={<div style={{ height: `100%` }} />}
+                  />
+              </div>
       </div>
 	    	
     );

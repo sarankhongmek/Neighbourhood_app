@@ -74,7 +74,9 @@ class App extends Component {
         };
       });
       this.setState({venues,center,markers});
-      console.log(results);
+      document.getElementById('error-fs').setAttribute('style', 'display: none;');
+    }).catch(err => {
+      document.getElementById('error-fs').setAttribute('style', 'display: initial;');
     });
   }
 
@@ -84,6 +86,7 @@ class App extends Component {
       <main className="flex-container main-content">
         <section>
         <Sidebar {...this.state} handListItemClick={this.handListItemClick}/>
+        <div id="error-fs"><p>Venues failed to update : (</p></div>
         </section>
       
         

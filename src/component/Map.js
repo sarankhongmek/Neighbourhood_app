@@ -2,7 +2,7 @@
 import React from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
 
-import blueDot from '../blueDott.png';
+import blackDott from '../blackDott.png';
 
 
 
@@ -31,7 +31,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     }): ""}
     	<Marker 
 	    						onClick={ () => props.handelMarkerClick(props.markers)}
-                  icon={blueDot}
+                  icon={blackDott}
                   position={{ lat: parseFloat(props.markers.lat), lng: parseFloat(props.markers.lng) }}
 		    			/>
     

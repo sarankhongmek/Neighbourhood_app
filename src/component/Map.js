@@ -18,7 +18,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     {props.markers  !== undefined ? props.markers.filter(marker => marker.isVisible).map((marker,index,arr) => {
       
         const venueInfo = props.venues.find(venue => venue.id === marker.id)
-        return (<Marker key={index} position={{ lat: marker.lat, lng: marker.lng }} onClick={ () => props.handelMarkerClick(marker)} animation={arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP} > 
+        return (<Marker key={index} position={{ lat: parseFloat(marker.lat), lng: parseFloat(marker.lng) }} onClick={ () => props.handelMarkerClick(marker)} animation={arr.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP} > 
 
               {marker.isOpen && venueInfo.bestPhoto && (<InfoWindow> 
                 <React.Fragment> 

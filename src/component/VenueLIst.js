@@ -6,7 +6,7 @@ class VenueLIst extends React.Component {
 
   render() {
     return (
-    <ol className="places-list" role="list" aria-label="Aberdeen museum places">
+    <ol className="places-list" role="tablist" aria-label="Aberdeen museum places">
         {this.props.venues !== undefined ? this.props.venues.map((venue,index) => <ListItem key={index} {...venue} handListItemClick={this.props.handListItemClick}/>): "Venues failed to load "}
         
     </ol>

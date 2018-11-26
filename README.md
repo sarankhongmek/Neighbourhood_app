@@ -18,9 +18,22 @@ In the project directory, you can run: Npm start that will open the application 
 
 
 
-## Service Worker
+## Service Worker for Offline first
 
-The service woeker is included in with create-react-app 
+To cache the app to run in development mode
+
+1)Run the command below
+
+npm run build
+
+2)
+
+npm install -g serve
+
+serve -s build
+
+
+3)Open project
 
 
 ## Resource

@@ -31,7 +31,7 @@ class App extends Component {
       {
         const newVenue = Object.assign(venue,res.response.venue);
         this.setState({venues: Object.assign(this.state.venues, newVenue)});
-        console.log(newVenue)
+        
       });
   }
 
@@ -51,7 +51,7 @@ class App extends Component {
   handListItemClick = venue => {
     const marker = this.state.markers.find(marker => marker.id === venue.id);
     this.handelMarkerClick(marker);
-    console.log(venue)
+    
   }
 
 

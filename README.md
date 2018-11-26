@@ -1,6 +1,6 @@
 # My neighborhood map project
 
-The place is in my city which is in scotland
+Neigborhood map in scotland
 
 
 
